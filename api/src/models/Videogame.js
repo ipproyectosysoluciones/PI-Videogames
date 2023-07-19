@@ -12,9 +12,6 @@ module.exports = (sequelize) => {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        notEmpty: true,
-      }
     },
     description: {
       type: DataTypes.STRING,
@@ -26,15 +23,21 @@ module.exports = (sequelize) => {
     },
     image: {
       type: DataTypes.STRING,
-      defaultValues: 'Unknow',
+      defaultValues: 'Unknown',
       allowNull: true,
     },
     released: {
       type: DataTypes.DATEONLY,
       allowNull: true,
     },
+    website: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      defaultValue: "Unknown",
+    },
     rating: {
       type: DataTypes.FLOAT,
+      defaultValues: 'Unknown',
       allowNull: true,
     },
   });

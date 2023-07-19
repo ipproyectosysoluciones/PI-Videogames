@@ -19,12 +19,14 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
+const allGames = require( './src/controllers/getGenreController' );
 require( "dotenv" ).config();
 const { PORT } = process.env;
 
 // Syncing all the models at once.
 conn.sync( { force: true } ).then( () => {
   server.listen( PORT, () => {
+    allGames();
     console.log( `%s listening at ${ PORT }` ); // eslint-disable-line no-console
   });
 });
