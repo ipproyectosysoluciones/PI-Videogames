@@ -1,0 +1,105 @@
+.header {
+  color: #cedbe4;
+  /* position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6em;
+  width: 96%;
+  padding: 2rem 2%;
+  background-color: rgba(58, 58, 58, 0.99);
+  background-position: center;
+  margin: 0.8rem 0em 0em 0em; */
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 4px;
+  margin-top: 12px;
+}
+
+.container a{
+  text-decoration: none;
+  color: #cedbe4
+}
+
+.filter select{
+  border: 2px solid #d6c689;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.rating select{
+  border: 2px solid #d6c689;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pagination{
+  margin: 14px;
+}
+
+.paginationCards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 8px 28px;
+}
+
+.search {
+  display: flex;
+  gap: 1em;
+}
+
+.search>input:nth-child(1) {
+  width: 12rem;
+  border-radius: .25rem;
+  outline: none;
+  border: none;
+  padding-left: .4rem;
+  background-color: #4d4d4d;
+  color: rgba(213, 213, 213, 0.98);
+  border: .04rem solid rgba(237, 237, 237, 0.5);
+}
+
+.buttonCreate {
+  border: 0;
+  background-image: linear-gradient(150deg, #192b37, #5f717f, #cedbe4);
+  border-radius: 10px;
+  color: #cedbe4;
+  display: flex;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 4px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.buttonCreate span{
+  background-color: #0e1213;
+  padding: 10px 14px;
+  border-radius: 6px;
+  transition: .5s;
+}
+
+.buttonCreate:hover span {
+  background: none;
+  color: #192b37;
+}
+
+/* .buttonCreate:hover {
+  transform: translateY(-1px);
+} */
+
+.buttonCreate:active {
+  transform: scale(0.9);
+}
