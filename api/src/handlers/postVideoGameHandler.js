@@ -4,7 +4,7 @@ const postVideoGames = async ( req, res ) => {
   const {
     name,
     description,
-    platforms,
+    plataforms,
     image,
     released,
     rating,
@@ -17,7 +17,7 @@ const postVideoGames = async ( req, res ) => {
     const postGame = await postDataVideoGames(
       name,
       description,
-      platforms,
+      plataforms,
       image,
       released,
       rating,
