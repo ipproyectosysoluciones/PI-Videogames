@@ -41,7 +41,7 @@ const Home = () => {
 
   const handleOrderRating = ( event ) => {
     event.preventDefault();
-    dispatch( orderVideogamesByRating( event.target.value) )
+    dispatch( orderVideogamesByRating( event.target.value ) )
     setAux( !aux );
   }
 
@@ -107,8 +107,8 @@ const Home = () => {
 
       <div className={ styles.pagination }>
         <Pagination
-          gamesPerPage={gamesPerPage} /* juegos por paginas */
-          allVideogames={allVideogames.length} /* todos los juegos */
+          gamesPerPage={ gamesPerPage } /* juegos por paginas */
+          allVideogames={ allVideogames.length } /* todos los juegos */
         />
       </div>
     </div>

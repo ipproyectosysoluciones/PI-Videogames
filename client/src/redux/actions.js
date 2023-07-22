@@ -54,8 +54,8 @@ export const AllGenres = () => {
         type: ALL_GENRE,
         payload: genres,
       })
-    } catch (error) {
-      console.log(error.message, 'error en géneros');
+    } catch ( error ) {
+      console.log( error.message, 'error en géneros' );
     };
   };
 };

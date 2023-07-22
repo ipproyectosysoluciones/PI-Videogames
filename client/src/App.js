@@ -23,7 +23,7 @@ function App() {
         <Route path='/home' element={ <Home/> }/>
         <Route path='/detail/:id' element={ <Detail/> }/>
         <Route path='/form' element={ <Form/> }/>
-        <Route path='/searchGames' element={ <SearchGames/> }/>
+        <Route path='/name' element={ <SearchGames/> }/>
       </Routes>
     </div>
   );

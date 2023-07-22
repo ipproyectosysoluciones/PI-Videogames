@@ -1,0 +1,25 @@
+
+.paginationContainer{
+  margin: 14px;
+}
+
+.pageButton{
+  margin-right: 8px;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.pageButton:hover{
+  background-color: #0e1213;
+  color: #d6c689;
+}
+
+.paginationContainer button:active{
+  transform: scale(0.9)
+}
+
+.pageButton.active {
+  background-color: #d6c689;
+  color: #0e1213;
+}
