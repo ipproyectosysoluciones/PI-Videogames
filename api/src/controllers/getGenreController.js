@@ -15,7 +15,7 @@ const allGenres = async () => {
 // verifica que la tabla Genres esté vacía
   const genreCount = await Genre.count();
   if ( genreCount === 0 ) {
-    const genreData = nameGenres.map( name => ( { name } ))
+    const genreData = nameGenres.map( name => ( { name } ) );
     await Genre.bulkCreate( genreData );
   }
   
