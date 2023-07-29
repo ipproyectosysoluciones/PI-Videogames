@@ -8,6 +8,7 @@ import Form from './views/Form/Form';
 import SearchGames from './views/SearchGames/SearchGames';
 import axios from "axios";
 import NavBar from './components/navBar/NavBar';
+// import Footer from './components/Footer/Footer';
 
 axios.defaults.baseURL = 'http://localhost:3001';
 
@@ -18,13 +19,14 @@ function App() {
   return (
     <div className="App">
       { location.pathname !== '/' && <NavBar/> }
-      <Routes>
-        <Route path='/' element={ <Landing/> }/>
-        <Route path='/home' element={ <Home/> }/>
-        <Route path='/detail/:id' element={ <Detail/> }/>
-        <Route path='/form' element={ <Form/> }/>
-        <Route path='/name' element={ <SearchGames/> }/>
-      </Routes>
+        <Routes>
+          <Route path='/' element={ <Landing/> }/>
+          <Route path='/home' element={ <Home/> }/>
+          <Route path='/detail/:id' element={ <Detail/> }/>
+          <Route path='/form' element={ <Form/> }/>
+          <Route path='/name' element={ <SearchGames/> }/>
+        </Routes>
+      {/* <Footer/> */}
     </div>
   );
 }

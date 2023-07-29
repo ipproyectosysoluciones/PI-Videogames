@@ -1,4 +1,4 @@
-.background {
+/* .background {
   position: relative;
   display: flex;
   justify-content: center;
@@ -36,7 +36,7 @@
   opacity: 0.8;
 } */
 
-.button {
+/*.button {
   align-self: center;
   background-color: rgba(91, 106, 159, 0.531);
   border: #e2e2e2 solid 2px;
@@ -82,4 +82,93 @@
 
 .socialDiv>a:active{
   scale: 1;
+} */
+
+
+/* flex-direction: column; */
+
+
+.container{
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: rgb(0,212,255);
+  background: linear-gradient(45deg, rgba(0,212,255,0.7) 0%, rgba(11,3,45,0.7) 100%); 
+  /* background-color: rgba(80, 74, 84, 0.3);  */
+  background-image: url( 'https://images.blz-contentstack.com/v3/assets/bltf408a0557f4e4998/bltd6a3e4b53209d445/63ec05bc9fcac365e25253a0/WoW_Free_Trial_BG.png' );
+  /* background-image: url(https://images.unsplash.com/photo-1619204715997-1367fe5812f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1889&q=80);  */
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  animation: fadeIn 2s ease;
+}  
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: blur(20px);
+  };
+  10% {
+    opacity: 1;
+    filter: brightness(3) blur(10px) ;
+  }
 }
+
+.text{
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  text-align: center;
+  color: #cedbe4;
+  font-size: 48px;
+  font-weight: 900;
+}
+.text p{
+  margin: 6px 0;
+}
+
+.divButton{
+  width: fit-content;
+  position: absolute;
+  top: 55%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.button {
+  align-self: center;
+  background-color: rgba(91, 106, 159, 0.531);
+  border: #e2e2e2 solid 2px;
+  color: #e2e2e2;
+  /* cursor: pointer; */
+  font-size: 1em;
+  text-decoration: none;
+  padding: .75rem;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+}
+.button:hover {
+  transform: translateY(2px);
+}
+
+/* .backgroundImage{
+  position: relative;
+  z-index: 0;
+}
+
+.backgroundImage img{
+  background-size: cover;
+  width: 100%;
+  height: auto; 
+} */
+
