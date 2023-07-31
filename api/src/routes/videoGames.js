@@ -10,8 +10,8 @@ const postVideoGames = require('../handlers/postVideoGameHandler');
 const videoGames = Router();
 
 videoGames.get( '/', getAllVideoGames );
-videoGames.get( '/:id', getIdVideoGames );
 videoGames.get( '/name', getNameVideoGames );
+videoGames.get( '/:id', getIdVideoGames );
 videoGames.post( '/', postVideoGames );
 
 

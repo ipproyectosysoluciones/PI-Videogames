@@ -4,9 +4,9 @@ const { Op } =require( 'sequelize' );
 require( 'dotenv' ).config();
 const { API_KEY } = process.env;
 const URL_BASE = 'https://api.rawg.io/api/';
-const URL_GAME = `${URL_BASE}games?key=${API_KEY}&page_size=40`;
+const URL_GAME = `${URL_BASE}games?key=${API_KEY}&page_size=20`;
 
-const pageNum = 4;
+const pageNum = 6;
 
 // GET | /videogames
 const allDataGames = async () => {
@@ -96,7 +96,7 @@ const allDataGames = async () => {
 // GET | /videogames/:idVideogame
 const idDataGames = async ( id ) => {
   if ( id.length < 7 ) {
-    const URL = `${URL_BASE}games/${id}?key=${API_KEY}&page_size=40`;
+    const URL = `${URL_BASE}games/${id}?key=${API_KEY}&page_size=20`;
 
     const response = await axios.get( URL );
     const data = response.data;
@@ -142,8 +142,8 @@ const idDataGames = async ( id ) => {
 };
 
 // GET | /videogames/name?="..."
-const nameDataGames = async (name)=> {
-  const URL = `${URL_GAME}games?search=${name}&key=${API_KEY}&page_size=15`
+const nameDataGames = async ( name )=> {
+  const URL = `https://api.rawg.io/api/games?search=${name}&key=${API_KEY}&page_size=15`
   try {
     // busca en la api
     const response = await axios.get( URL );
@@ -177,12 +177,12 @@ const nameDataGames = async (name)=> {
       where: {
         name: {
           // hace la comparación sin distinguir entre mayúsculas y minúsculas y espacios
-          [ Op.iLike ]: `%${ name }%`,
+          [Op.iLike]: `%${name}%`,
         },
       },
       include: [{
         model: Genre,
-        attributes: [ 'name' ],
+        attributes: ['name'],
         through: {
           attributes: []
         }
@@ -211,17 +211,17 @@ const nameDataGames = async (name)=> {
 
     //verifica si el arreglo está vacío, osea, si no se encontraron resultados en la API y en la Base de datos
     if ( apiData.length === 0 && dbDataGames.length === 0 ) {
-      return { message: 'No se encontraron videojuegos con este nombre en la API ni en la DB' }
+      return { message: 'No games with this name were found in the API or in the DB' }
     } 
     
   // crea un array con los resultados encontrados tanto en la Api como la BD
-    const totalData = apiData.concat( dbDataGames );
-    console.log(totalData.length, 'API y DB');
+  const totalData = apiData.concat( dbDataGames );
+  console.log( totalData.length, 'API y DB' );
 
     return totalData;
   } 
   catch ( error ) {
-    throw new Error( "Error al buscar los juegos en la API y la base de datos" )
+    throw new Error( "Error when fetching the games in the API and the database" )
   }
 };
 

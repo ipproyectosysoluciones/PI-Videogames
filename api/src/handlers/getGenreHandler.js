@@ -1,4 +1,4 @@
-const allGenres = require( '../handlers/getGenreHandler' );
+const allGenres = require( '../controllers/getGenreController' );
 
 const getGenres = async ( req, res ) => {
   try {
