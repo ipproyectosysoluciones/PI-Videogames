@@ -14,34 +14,47 @@ import {
 
 export const getVideogames = () => {
   return async ( dispatch ) => {
-    const apiData = await axios.get('/videogames');
-    const Videogames = apiData.data;
-    dispatch({
-      type: GET_VIDEOGAMES,
-      payload: Videogames,
-    });
+    try {
+      const apiData = await axios.get( '/videogames' );
+      const Videogames = apiData.data;
+      
+      dispatch({
+        type: GET_VIDEOGAMES,
+        payload: Videogames,
+      });
+    } catch ( error ) {
+      console.log( error.message );
+    };
   };
 };
 
 export const detailVideogames = ( id ) => {
   return async ( dispatch ) => {
-    const apiData = await axios.get(`/videogames/${id}`);
-    const DetailGame = apiData.data;
-    dispatch({
-      type: DETAIL_VIDEOGAMES,
-      payload: DetailGame,
-    });
+    try {
+      const apiData = await axios.get(`/videogames/${id}`);
+      const DetailGame = apiData.data;
+      dispatch({
+        type: DETAIL_VIDEOGAMES,
+        payload: DetailGame,
+      });
+    } catch (error) {
+      console.log( error.message );
+    };
   };
 };
 
 export const searchVideogames = ( name ) => {
   return async ( dispatch ) => {
-    const apiData = await axios.get(`/videogames/name?name=${name}`);
-    const Videogames = apiData.data; 
-    dispatch({
-      type: SEARCH_VIDEOGAMES,
-      payload: Videogames,
-    });
+    try {
+      const apiData = await axios.get(`/videogames/?name=${name}`);
+      const videogames = apiData.data; 
+      dispatch({
+        type: SEARCH_VIDEOGAMES,
+        payload: videogames
+      });
+    } catch (error) {
+      console.log( error.message );
+    };
   };
 };
 
@@ -55,7 +68,7 @@ export const AllGenres = () => {
         payload: genres,
       })
     } catch ( error ) {
-      console.log( error.message, 'error en géneros' );
+      console.log( error.message, 'mistake in genres' );
     };
   };
 };

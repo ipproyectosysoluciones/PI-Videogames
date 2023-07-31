@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import { getVideogames, orderVideogamesAscDesc, orderVideogamesByRating } from '../../redux/actions';
-import SearchBar from '../../components/searchBar/SearchBar';
-import GenderFilter from '../../components/genderFilter/GenderFilter';
-import ResetFilter from '../../components/resetFilter/ResetFilter';
-import Pagination from '../../components/pagination/Pagination';
-import Card from '../../components/card/Card';
-import Loading from '../../components/loading/Loading';
+import { GenderFilter, ResetFilter, Pagination, Card, Loading } from "../../components/index.js";
 import styles from "./Home.module.css";
+// import Footer from '../../components/Footer/Footer';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -48,7 +44,6 @@ const Home = () => {
   return (
     <div className={ styles.header }>
       <div className={ styles.container }>
-        <SearchBar/>
 
         <GenderFilter/>
 
@@ -70,11 +65,6 @@ const Home = () => {
 
         <ResetFilter/>
 
-        <button className={ styles.buttonCreate }>
-          <NavLink style={ { textDecoration: 'none' } } to='/form'>
-            <span>Create Game</span>
-          </NavLink>
-        </button>
       </div>
 
       <div className={ styles.pagination }>

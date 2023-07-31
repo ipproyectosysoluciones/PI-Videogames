@@ -1,16 +1,12 @@
 import './App.css';
 import React from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import Landing from './views/Landing/Landing';
-import Home from './views/Home/Home';
+import { Landing, Home, SearchGames, Form } from './views';
 import Detail from './components/detail/Detail';
-import Form from './views/Form/Form';
-import SearchGames from './views/SearchGames/SearchGames';
 import axios from "axios";
 import NavBar from './components/navBar/NavBar';
-// import Footer from './components/Footer/Footer';
 
-axios.defaults.baseURL = 'http://localhost:3001';
+axios.defaults.baseURL = 'http://localhost:3001/';
 
 function App() {
   const location = useLocation();
@@ -26,7 +22,6 @@ function App() {
           <Route path='/form' element={ <Form/> }/>
           <Route path='/name' element={ <SearchGames/> }/>
         </Routes>
-      {/* <Footer/> */}
     </div>
   );
 }

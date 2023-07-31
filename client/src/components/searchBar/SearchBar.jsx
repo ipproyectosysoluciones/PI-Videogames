@@ -31,7 +31,7 @@ const SearchBar = ( props ) => {
         type='submit'
         onClick={ ( event ) => handlerSubmitSearch( event ) }
       >
-        <span>Search Game</span>
+        Search Game
       </button>
     </div>
   );

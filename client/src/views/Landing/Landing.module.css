@@ -1,111 +1,16 @@
-/* .background {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: rgba(80, 74, 84, 0.3);
-  background-image: url('https://wallpapercave.com/wp/wp3235014.png');
-  background-position: top center;
-  background-size: cover;
-}
-
-.card {
-  position: relative;
+.landingContainer {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 24em;
-  min-height: 24em;
-  padding: 2em;
-  border: 11px solid rgb(255, 255, 255);
-  box-shadow: rgba(91, 106, 159, 0.3) 0px 0px 500px 54px, rgb(255, 242, 230) 0px 0px 15px 10px;
-  background-image: url("../../assets/conjunto-logo.png");
-  background-color: rgba(80, 74, 84, 0.5);
-  background-size: cover;
-  background-position: center;
-}
-
-/* .card > img {
-  position: relative;
-  display: flex;
   justify-content: center;
   align-items: center;
-  width: 25em;
-  opacity: 0.8;
-} */
-
-/*.button {
-  align-self: center;
-  background-color: rgba(91, 106, 159, 0.531);
-  border: #e2e2e2 solid 2px;
-  color: #e2e2e2;
-  cursor: pointer;
-  font-size: 1em;
-  padding: .75rem;
-  border-bottom-left-radius: 15px 255px;
-  border-bottom-right-radius: 225px 15px;
-  border-top-left-radius: 255px 15px;
-  border-top-right-radius: 15px 225px;
-}
-
-.button:hover {
-  transform: translateY(2px);
-}
-
-.socialDiv {
-  display: flex;
-  justify-content: center;
-  gap: 0.7em;
-  align-items: center;
-  opacity: 0.8;
-}
-
-.socialDiv img {
-  width: 2em;
-}
-
-.socialDiv>a {
-  display: flex;
-  align-items: center;
-  gap: 0.2em;
-  color: rgb(189, 189, 189);
-  text-decoration: none;
-  font-weight: bolder;
-  font-size: large;
-}
-
-.socialDiv>a:hover{
-  scale: 1.1;
-}
-
-.socialDiv>a:active{
-  scale: 1;
-} */
-
-
-/* flex-direction: column; */
-
-
-.container{
   height: 100vh;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
   background: rgb(0,212,255);
-  background: linear-gradient(45deg, rgba(0,212,255,0.7) 0%, rgba(11,3,45,0.7) 100%); 
-  /* background-color: rgba(80, 74, 84, 0.3);  */
-  background-image: url( 'https://images.blz-contentstack.com/v3/assets/bltf408a0557f4e4998/bltd6a3e4b53209d445/63ec05bc9fcac365e25253a0/WoW_Free_Trial_BG.png' );
-  /* background-image: url(https://images.unsplash.com/photo-1619204715997-1367fe5812f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1889&q=80);  */
+  background: linear-gradient(45deg, rgba(0,212,255,1) 0%, rgba(11,3,45,1.5) 100%); 
+  background-image: url("https://images.blz-contentstack.com/v3/assets/bltf408a0557f4e4998/bltd6a3e4b53209d445/63ec05bc9fcac365e25253a0/WoW_Free_Trial_BG.png");
   background-size: cover;
-  background-position: center; 
-  background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
   animation: fadeIn 2s ease;
-}  
+}
 
 @keyframes fadeIn {
   0% {
@@ -118,57 +23,40 @@
   }
 }
 
-.text{
-  position: absolute;
-  top: 30%;
-  left: 20%;
-  z-index: 1;
-  transform: translate(-50%, -50%);
-  width: fit-content;
+.titleContainer {
   text-align: center;
   color: #cedbe4;
-  font-size: 48px;
+  margin: 0;
+  margin-top: 3rem;
+  z-index: 1;
   font-weight: 900;
 }
-.text p{
-  margin: 6px 0;
-}
 
-.divButton{
-  width: fit-content;
-  position: absolute;
-  top: 55%;
-  left: 20%;
-  transform: translate(-50%, -50%);
+.subTitleContainer {
+  color: #cedbe4;
   z-index: 1;
+  font-weight: 900;
 }
 
-.button {
-  align-self: center;
-  background-color: rgba(91, 106, 159, 0.531);
-  border: #e2e2e2 solid 2px;
-  color: #e2e2e2;
-  /* cursor: pointer; */
-  font-size: 1em;
-  text-decoration: none;
-  padding: .75rem;
-  border-bottom-left-radius: 15px 255px;
-  border-bottom-right-radius: 225px 15px;
-  border-top-left-radius: 255px 15px;
-  border-top-right-radius: 15px 225px;
-}
-.button:hover {
-  transform: translateY(2px);
+.landingContainer button {
+  padding: 10px 20px;
+  border: none;
+  font-size: 17px;
+  color: #fff;
+  border-radius: 7px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.5s;
+  transition-property: box-shadow;
 }
 
-/* .backgroundImage{
-  position: relative;
-  z-index: 0;
+.landingContainer button {
+  background: rgba(0, 140, 255, 1);
+  box-shadow: 0 0 25px rgba(0, 140, 255, 0.5);
 }
 
-.backgroundImage img{
-  background-size: cover;
-  width: 100%;
-  height: auto; 
-} */
-
+.landingContainer button:hover {
+  box-shadow: 0 0 5px rgba(0, 140, 255, 0.5), 0 0 25px rgba(0, 140, 255, 0.7),
+    0 0 50px rgba(0, 140, 255, 0.9), 0 0 100px rgba(0, 140, 255, 1.2);
+}

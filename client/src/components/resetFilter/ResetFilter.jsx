@@ -12,7 +12,7 @@ const ResetFilter = () => {
   return (
     <div>
       <button className={ styles.button } onClick={ handlerButton }>
-        <span>Reset Filter</span>
+        Reset Filter
       </button>
     </div>
   );

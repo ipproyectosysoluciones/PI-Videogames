@@ -1,9 +1,11 @@
-.cardsContainer{
+.cardContainer {
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
   display: flex;
   flex-direction: row;
+  border-radius: 15px;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  margin: 8px 28px;
+  gap: 2em;
+  padding: 25px;
 }

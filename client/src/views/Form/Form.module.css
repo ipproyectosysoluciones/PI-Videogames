@@ -1,31 +1,48 @@
 .formContainer{
+  margin: 1rem;
+  margin-bottom: 1rem;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .formContainer form{
-  width: fit-content;
+  color: #fff;
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
-  margin: 0 28px;
-  color: #cedbe4;
-  gap: 16px;
-  /* border: 1px solid #cedbe4 ; */
-  border-radius: 20px;
-  background: #192b37;
-  box-shadow: 6px 6px 28px 8px rgba(95,113,127,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
+  width: 40%;
+  margin: auto;
+  gap: 5px;
+  padding: 50px;
+  background: linear-gradient(to bottom, #164b60, #4fc0d0);
+  border-radius: 12px;
+  overflow: hidden;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transform: rotateX(-10deg);
+  transition: all 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  animation: form-animation 0.5s ease-in-out;
+}
+
+@keyframes form-animation {
+  from {
+    transform: rotateX(-30deg);
+    opacity: 0;
+  }
+
+  to {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
 }
 
 .formContainer form div{
   display: flex;
   flex-direction: row;
   text-align: left;
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: bold;
   margin: 16px 16px 0 16px;
   gap: 16px
@@ -34,22 +51,44 @@
 .formContainer label {
   width: 120px;
 }
-.formContainer p {
+
+/* .formContainer p {
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 0;
   color: #d6c689;
-}
+} */
+
 .formContainer input {
-  width: 150px;
-  border: 1px solid #d6c689;
-  padding: 8px;
-  border-radius: 8px;
-  cursor: pointer;
+  padding: 10px;
+  border-radius: 12px;
+  background-color: transparent;
+  transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  color: rgb(255, 255, 255);
+  border: 2px solid #3b8df2;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
+
+.formContainer input::placeholder {
+  color: #fff;
+}
+
+.formContainer input:hover,
+input:focus {
+  border-color: rgba(0, 140, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05) rotateY(20deg);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
 .formContainer select {
   width: 150px;
-  border: 1px solid #d6c689;
+  border: 1px solid rgba(0, 140, 255, 1);
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
@@ -60,30 +99,44 @@
 }
 
 .button{
-  border: 0;
-  background-color: #d6c689;
-  border-radius: 8px;
-  color: #192b37;
-  display: flex;
-  font-size: 18px;
-  font-weight: 500;
-  padding: 2px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  background-color: rgba(0, 140, 255, 1);
+  color: #f1f1f1;
+  font-size: 17px;
   cursor: pointer;
-  transition: .3s;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transform: rotateX(-10deg);
+  transition: all 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
-.button span{
-  /* background-color: #0e1213; */
-  padding: 8px 18px;
-  border-radius: 6px;
-  transition: .5s;
-}
+.button:hover {
+  transform: scale(1.05) rotateY(20deg) rotateX(10deg);
+  box-shadow: 0 12px 16px 0 rgba(0, 140, 255, 0.5),0 17px 50px 0 rgba(0, 140, 255, 0.7);
 
-.button:hover span{
-  background-color: #0e1213;
-  color: #d6c689;
 }
 
 .button:active{
   transform: scale(0.9)
+}
+
+.error-message {
+  color: hsl(9, 92%, 50%);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

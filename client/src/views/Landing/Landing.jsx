@@ -1,22 +1,18 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import {Link } from 'react-router-dom';
 import styles from "./Landing.module.css";
 
 const Landing = () => {
   return (
-    <div className={ styles.container }>
-      <div className={ styles.text }>
-        <p>PI</p>
-        <p>Videogames</p>
-        <p>Henry</p>
-      </div>
-
-      <div className={ styles.divButton }>
-        <button className={ styles.button } type='button'>
-          <NavLink to='/home'>Enter</NavLink>
-        </button>
-      </div>
-   </div>
+    <div className={styles.landingContainer}>
+      <h1 className={styles.titleContainer}>VideoGames </h1>
+      <h3 className={styles.subTitleContainer}>
+        Welcome to the Henry´s Videogames App
+      </h3>
+      <Link to="/home">
+        <button type="submit">Enter</button>
+      </Link>
+    </div>
   )
 };
 

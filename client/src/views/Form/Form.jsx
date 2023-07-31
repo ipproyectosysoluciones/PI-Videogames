@@ -79,16 +79,19 @@ const Form = () => {
   return (
     <div className={ styles.formContainer }>
       <form  onSubmit={ ( event ) => handleSubmit( event ) }>
+        <title>Form</title>
+        <h1>Create Videogame</h1>
         <div>
           <label htmlFor='name'>Name: </label>
           <input 
             type='text' 
             value={ form.name } 
             name='name' 
+            placeholder='Name here...'
             onChange={ handlerInputChange }
           />
         </div>
-        { errors.name && ( <p>{ errors.name }</p> ) }
+        { errors.name && ( <p className={styles["error-message"]}>{ errors.name }</p> ) }
         
         <div>
           <label htmlFor='description'>Description: </label>
@@ -96,10 +99,11 @@ const Form = () => {
             type='text' 
             value={ form.description } 
             name='description' 
+            placeholder='Description here...'
             onChange={ handlerInputChange }
           />
         </div>
-        { errors.description && ( <p>{ errors.description }</p> ) }
+        { errors.description && ( <p className={styles["error-message"]}>{ errors.description }</p> ) }
 
         <div>
           <label htmlFor='platforms'>Platforms: </label>
@@ -107,10 +111,11 @@ const Form = () => {
             type='text' 
             value={ form.platforms } 
             name='platforms' 
+            placeholder='Platforms here..'
             onChange={ handlerInputChange }
           />
         </div>
-        { errors.platforms && ( <p>{ errors.platforms }</p> ) }
+        { errors.platforms && ( <p className={styles["error-message"]}>{ errors.platforms }</p> ) }
 
         <div>
           <label htmlFor='image'> Url Image: </label>
@@ -118,10 +123,11 @@ const Form = () => {
             type='url' 
             value={ form.image } 
             name='image' 
+            placeholder='Image link here...'
             onChange={ handlerInputChange }
           />
         </div>
-        { errors.image && ( <p>{ errors.image }</p> ) }
+        { errors.image && ( <p className={styles["error-message"]}>{ errors.image }</p> ) }
 
         <div>
           <label htmlFor='released'>Released: </label>
@@ -132,7 +138,7 @@ const Form = () => {
             onChange={ handlerInputChange }
           />
         </div>
-        { errors.released && ( <p>{ errors.released }</p> ) }
+        { errors.released && ( <p className={styles["error-message"]}>{ errors.released }</p> ) }
 
         <div>
           <label htmlFor='rating'>Rating: </label>
@@ -140,10 +146,11 @@ const Form = () => {
             type='number' 
             value={ form.rating } 
             name='rating' 
+            placeholder='Rating here...'
             onChange={ handlerInputChange }
           />
         </div>
-        { errors.rating && ( <p>{ errors.rating }</p> ) }
+        { errors.rating && ( <p className={styles["error-message"]}>{ errors.rating }</p> ) }
 
         <div>
           <label htmlFor='genres'>Genres: </label>
@@ -158,10 +165,10 @@ const Form = () => {
             }
           </select>
         </div>
-        { errors.genres && ( <p>{ errors.genres }</p> ) }
+        { errors.genres && ( <p className={styles["error-message"]}>{ errors.genres }</p> ) }
 
         <button className={ styles.button }>
-          <span>Create Videogame</span>
+          Create Videogame
         </button>
         
       </form>
