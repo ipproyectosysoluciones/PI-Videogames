@@ -1,13 +1,21 @@
-/* .filterContainer{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-} */
-
 .filterContainer select {
   border: none;
   padding: 6px;
   border-radius: 6px;
   cursor: pointer;
 }
+
+/* Media queries para dispositivos móviles */
+/* @media screen and (max-width: 768px) {
+  .filterContainer select {
+    padding: 4px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .filterContainer select {
+    padding: 2px;
+    font-size: 12px;
+  }
+} */

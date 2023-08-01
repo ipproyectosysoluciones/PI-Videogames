@@ -60,3 +60,102 @@
   box-shadow: 0 0 5px rgba(0, 140, 255, 0.5), 0 0 25px rgba(0, 140, 255, 0.7),
     0 0 50px rgba(0, 140, 255, 0.9), 0 0 100px rgba(0, 140, 255, 1.2);
 }
+
+/* Media Queries */
+/* Media query para dispositivos con un ancho máximo de 768px */
+@media (max-width: 768px) {
+  .landing-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgb(0, 212, 255);
+    background: linear-gradient(45deg, rgba(0, 212, 255, 1) 0%, rgba(11, 3, 45, 1)) 100%;
+    background-image: url("https://images.blz-contentstack.com/v3/assets/bltf408a0557f4e4998/bltd6a3e4b53209d445/63ec05bc9fcac365e25253a0/WoW_Free_Trial_BG.png");
+    background-size: cover;
+    background-position: 50%;
+    animation: fadeIn 2s ease;
+  }
+  .titleContainer {
+    text-align: center;
+    color: #cedbe4;
+    margin: 0;
+    margin-top: 3rem;
+    z-index: 1;
+    font-weight: 900;
+  }
+  .subTitleContainer {
+    color: #cedbe4;
+    z-index: 1;
+    font-weight: 900;
+  }
+  .landing-container button {
+    padding: 10px 20px;
+    border: none;
+    font-size: 17px;
+    color: #fff;
+    border-radius: 7px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.5s;
+  }
+  .landing-container button {
+    background: rgba(0, 140, 255, 1);
+    box-shadow: 0 0 25px rgba(0, 140, 255, 0.5);
+  }
+  .landing-container button:hover {
+    box-shadow: 0 0 5px rgba(0, 140, 255, 0.5), 0 0 25px rgba(0, 140, 255, 0.7),
+      0 0 50px rgba(0, 140, 255, 0.9), 0 0 100px rgba(0, 140, 255, 1.2);
+  }
+}
+
+ /* Media query para dispositivos con un ancho máximo de 480px */
+@media (max-width: 480px) {
+  .landing-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgb(0, 212, 255);
+    background: linear-gradient(45deg, rgba(0, 212, 255, 1) 0%, rgba(11, 3, 45, 1)) 100%;
+    background-image: url("https://images.blz-contentstack.com/v3/assets/bltf408a0557f4e4998/bltd6a3e4b53209d445/63ec05bc9fcac365e25253a0/WoW_Free_Trial_BG.png");
+    background-size: cover;
+    background-position: 50%;
+    animation: fadeIn 2s ease;
+  }
+  .titleContainer {
+    text-align: center;
+    color: #cedbe4;
+    margin: 0;
+    margin-top: 3rem;
+    z-index: 1;
+    font-weight: 900;
+  }
+  .subTitleContainer {
+    color: #cedbe4;
+    z-index: 1;
+    font-weight: 900;
+  }
+  .landing-container button {
+    padding: 10px 20px;
+    border: none;
+    font-size: 17px;
+    color: #fff;
+    border-radius: 7px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.5s;
+  }
+  .landing-container button {
+    background: rgba(0, 140, 255, 1);
+    box-shadow: 0 0 25px rgba(0, 140, 255, 0.5);
+  }
+  .landing-container button:hover {
+    box-shadow: 0 0 5px rgba(0, 140, 255, 0.5), 0 0 25px rgba(0, 140, 255, 0.7),
+      0 0 50px rgba(0, 140, 255, 0.9), 0 0 100px rgba(0, 140, 255, 1.2);
+  }
+}

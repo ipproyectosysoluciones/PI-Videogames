@@ -1,4 +1,4 @@
-.gameContainer{
+.gameContainer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -6,4 +6,17 @@
   align-items: center;
   padding: 0;
   margin: 8px 28px;
+}
+
+/* Media queries para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .game-container {
+    margin: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .game-container {
+    margin: 4px;
+  }
 }

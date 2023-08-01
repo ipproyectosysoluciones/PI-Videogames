@@ -7,7 +7,6 @@ import NavBar from './navBar/NavBar.jsx';
 import Pagination from './pagination/Pagination.jsx';
 import ResetFilter from './resetFilter/ResetFilter.jsx';
 import SearchBar from './searchBar/SearchBar.jsx';
-import Footer from './Footer/Footer.jsx';
 
 
 export { 
@@ -20,5 +19,4 @@ export {
   Pagination, 
   ResetFilter, 
   SearchBar, 
-  Footer,
 };
