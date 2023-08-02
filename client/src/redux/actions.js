@@ -46,7 +46,7 @@ export const detailVideogames = ( id ) => {
 export const searchVideogames = ( name ) => {
   return async ( dispatch ) => {
     try {
-      const apiData = await axios.get(`/videogames/?name=${name}`);
+      const apiData = await axios.get(`/videogames/name?name=${name}`);
       const videogames = apiData.data; 
       dispatch({
         type: SEARCH_VIDEOGAMES,
