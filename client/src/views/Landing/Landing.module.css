@@ -25,6 +25,7 @@
 
 .titleContainer {
   text-align: center;
+  font-size: 5rem;
   color: #cedbe4;
   margin: 0;
   margin-top: 3rem;
@@ -79,6 +80,7 @@
   }
   .titleContainer {
     text-align: center;
+    font-size: 3rem;
     color: #cedbe4;
     margin: 0;
     margin-top: 3rem;
@@ -128,6 +130,7 @@
   }
   .titleContainer {
     text-align: center;
+    font-size: 2rem;
     color: #cedbe4;
     margin: 0;
     margin-top: 3rem;

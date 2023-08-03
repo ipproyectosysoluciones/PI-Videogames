@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { getVideogames, orderVideogamesAscDesc, orderVideogamesByRating } from '../../redux/actions';
-import { GenderFilter, ResetFilter, Pagination, Card, Loading } from "../../components/index.js";
+import { GenderFilter, ResetFilter, Pagination, Card, Loading, SearchBar } from "../../components/index.js";
 import styles from "./Home.module.css";
 
 const Home = () => {
@@ -46,6 +46,7 @@ const Home = () => {
         <GenderFilter/>
 
         <div className={ styles.filter }>
+          <legend className={ styles.legend }>Select by Order</legend>
           <select onChange={ ( event ) => handleOrderAscDesc( event ) }>
             <option value='default'>Select by Order</option>
             <option value='asc'>Ascendent</option>
@@ -53,7 +54,10 @@ const Home = () => {
           </select>
         </div>
 
+        <SearchBar/>
+
         <div className={ styles.rating }>
+          <legend className={ styles.legend }>Select by Rating</legend>
           <select onChange={ ( event ) => handleOrderRating( event ) }>
             <option value='default'>Select by Rating</option>
             <option value='best'>Best</option>

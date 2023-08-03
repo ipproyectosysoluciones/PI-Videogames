@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './NavBar.module.css';
 import { Link } from 'react-router-dom';
-import SearchBar from '../searchBar/SearchBar';
 
 const NavBar = () => {
   return (
@@ -11,8 +10,6 @@ const NavBar = () => {
       </Link>
       <title>Home</title>
       <h1>Videogames</h1>
-
-      <SearchBar/>
 
       <ul>
           <Link to="/home">

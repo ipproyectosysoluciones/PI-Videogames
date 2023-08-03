@@ -21,6 +21,7 @@ const GenderFilter = () => {
 
   return (
     <div className={ styles.filterContainer }>
+      <legend className={ styles.label }>Filter By Games</legend>
       <select onChange={ ( event ) => handleFilter(  event ) } defaultValue='default'>
         <option value='default' disabled >Filter by Genre</option>
         {

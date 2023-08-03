@@ -19,7 +19,7 @@ const SearchBar = ( props ) => {
   }
 
   return (
-    <div className={ styles.searchBarContainer }>
+    <fieldset className={ styles.searchBarContainer }>
       <input 
         onChange={ ( event ) => handlerInputChange( event ) }
         type='search'
@@ -33,7 +33,7 @@ const SearchBar = ( props ) => {
       >
         Search Game
       </button>
-    </div>
+    </fieldset>
   );
 };
 

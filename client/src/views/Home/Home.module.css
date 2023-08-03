@@ -24,6 +24,10 @@
   cursor: pointer;
 }
 
+legend {
+  color: white;
+}
+
 .rating select{
   border: none;
   padding: 6px;
