@@ -61,6 +61,21 @@ const Form = () => {
     genres: true,
   });
 
+  // const handleSubmit = ( event ) => {
+  //   event.preventDefault();
+  //   dispatch( postDataVideoGames( form ) );
+  //   setForm({
+  //     name: '',
+  //     description: '',
+  //     platforms:'',
+  //     image: '',
+  //     released: '',
+  //     rating: '',
+  //     genres: [],
+  //   });
+  //   alert( 'Videogame created!' );
+  // };
+
   const handleSubmit = ( event ) => {
     event.preventDefault();
     axios.post( '/videogames', form )

@@ -59,7 +59,7 @@ export const searchVideogames = ( name ) => {
   };
 };
 
-// export const createVideogames = ( videogame ) => {
+// export const postDataVideoGames = ( videogame ) => {
 //   return async ( dispatch ) => {
 //     try {
 //       console.log( videogame );
