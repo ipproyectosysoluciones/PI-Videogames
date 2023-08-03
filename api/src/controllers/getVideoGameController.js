@@ -143,7 +143,7 @@ const idDataGames = async ( id ) => {
 
 // GET | /videogames/name?="..."
 const nameDataGames = async ( name )=> {
-  const URL = `https://api.rawg.io/api/games?search=${name}&key=${API_KEY}&page_size=15`
+  const URL = `${URL_BASE}games?search=${name}&key=${API_KEY}&page_size=15`
   try {
     // busca en la api
     const response = await axios.get( URL );
