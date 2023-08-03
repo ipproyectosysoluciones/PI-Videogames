@@ -39,7 +39,7 @@ const postDataVideoGames = async (
         attributes: []
       }
     }]
-  })
+  });
   
   //console.log('*******',gameRelation, '******');
   return gameRelation;

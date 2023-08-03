@@ -1,6 +1,7 @@
 import { 
   ALL_GENRE,
   DETAIL_VIDEOGAMES,
+  // CREATE_VIDEOGAMES,
   FILTER_GENRE,
   GET_VIDEOGAMES,
   RESET_FILTER_GENRES,
@@ -47,6 +48,12 @@ const reducer = ( state = initialState, { type, payload } ) => {
         ...state,
         genres: payload,
       };
+
+    // case CREATE_VIDEOGAMES:
+    //   return{
+    //     ...state,
+    //     Videogames: payload,
+    //   };
 
     case FILTER_GENRE:
       const VideogamesCopy = state.VideogamesCopy;

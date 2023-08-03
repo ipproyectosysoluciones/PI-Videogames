@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-// import { NavLink } from 'react-router-dom';
 import { getVideogames, orderVideogamesAscDesc, orderVideogamesByRating } from '../../redux/actions';
 import { GenderFilter, ResetFilter, Pagination, Card, Loading } from "../../components/index.js";
 import styles from "./Home.module.css";
-// import Footer from '../../components/Footer/Footer';
 
 const Home = () => {
   const dispatch = useDispatch();

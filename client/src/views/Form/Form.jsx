@@ -1,9 +1,43 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import validate from './Validate';
 import styles from './Form.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { AllGenres } from '../../redux/actions';
+
+const validate = ( form ) =>{
+  let errors = {}
+  if ( !form.name ) {
+    errors.name = 'Insert a validate name👆🏻'
+  } else if ( !/^[a-zA-Z\s]+$/.test( form.name ) ) {
+    errors.name = 'The name must only contain letters and spaces';
+  }
+  if ( !form.description ) {
+    errors.description = 'Insert a validate description👆🏻'
+  } else if ( form.description.length < 10 ) {
+    errors.description = 'Description must be at least 10 characters';
+  }
+  if ( !form.platforms ) {
+    errors.platforms = 'Insert a validates platforms👆🏻'
+  }
+  if ( !form.image ) {
+    errors.image = 
+    !form.image.includes('https://' || 'http://')
+    ? 'Insert a validate URL image👆🏻' 
+    : ''
+  }
+  if ( !form.released ) {
+    errors.released = 'Insert a validate released👆🏻'
+  }
+  if ( !form.rating ) {
+    errors.rating = 'Insert a validate rating👆🏻'
+  } else if ( !/^[1-5]$/.test( form.rating ) ) {
+    errors.rating = 'The rating must be between 1 and 5';
+    }
+  if ( !form.genres.length === 0 ) {
+    errors.genres = 'Select at least one genre👆🏻'
+  }
+  return errors;
+};
 
 const Form = () => {
   const [ form, setForm ] = useState({
@@ -30,8 +64,8 @@ const Form = () => {
   const handleSubmit = ( event ) => {
     event.preventDefault();
     axios.post( '/videogames', form )
-      .then( res => alert( 'Game created successfully'))
-      .catch( err => alert( 'Please fill in all the fields' ));
+      .then( res => alert( 'Game created successfully' ) )
+      .catch( err => alert( 'Please fill in all the fields' ) );
     setForm({
       name: '',
       description: '',
@@ -43,16 +77,15 @@ const Form = () => {
     });
   };
 
-  const handlerInputChange = ( event ) => {
-      setForm({
-        ...form,
-        [ event.target.name]: event.target.value,
-      })
-      setErrors( validate({
-        ...form, 
-        [ event.target.name ]: event.target.value,
-      })
-    );
+  const handlerInputChange= ( event ) => {
+    setForm({
+      ...form,
+      [ event.target.name ]: event.target.value,
+    });
+    setErrors( validate({
+      ...form, 
+      [ event.target.name ]: event.target.value,
+    }));
   };
 
   const dispatch = useDispatch();
@@ -64,15 +97,14 @@ const Form = () => {
 
   const handlerGenres = ( event )=> {
     if ( !form.genres.includes( event.target.value ) ) {
-        setForm({
-          ...form,
-          genres: [ ...form.genres, event.target.value ]
-        })
-        setErrors( validate({
-          ...form, 
-          genres: [ ...form.genres, event.target.value ],
-        })
-      )
+      setForm({
+        ...form,
+        genres: [ ...form.genres, event.target.value ]
+      })
+      setErrors( validate({
+        ...form, 
+        genres: [ ...form.genres, event.target.value ],
+      }))
     };
   };
 
@@ -91,7 +123,13 @@ const Form = () => {
             onChange={ handlerInputChange }
           />
         </div>
-        { errors.name && ( <p className={styles["error-message"]}>{ errors.name }</p> ) }
+        { 
+          errors.name && ( 
+            <p className={ styles[ "error-message" ] }>
+              { errors.name }
+            </p> 
+          ) 
+        }
         
         <div>
           <label htmlFor='description'>Description: </label>
@@ -103,7 +141,13 @@ const Form = () => {
             onChange={ handlerInputChange }
           />
         </div>
-        { errors.description && ( <p className={styles["error-message"]}>{ errors.description }</p> ) }
+        { 
+          errors.description && ( 
+            <p className={ styles[ "error-message" ] }>
+              { errors.description }
+            </p> 
+          ) 
+        }
 
         <div>
           <label htmlFor='platforms'>Platforms: </label>
@@ -115,7 +159,13 @@ const Form = () => {
             onChange={ handlerInputChange }
           />
         </div>
-        { errors.platforms && ( <p className={styles["error-message"]}>{ errors.platforms }</p> ) }
+        { 
+          errors.platforms && ( 
+            <p className={ styles[  "error-message" ] }>
+              { errors.platforms }
+            </p> 
+          ) 
+        }
 
         <div>
           <label htmlFor='image'> Url Image: </label>
@@ -127,7 +177,13 @@ const Form = () => {
             onChange={ handlerInputChange }
           />
         </div>
-        { errors.image && ( <p className={styles["error-message"]}>{ errors.image }</p> ) }
+        { 
+          errors.image && ( 
+            <p className={ styles[ "error-message" ] }>
+              { errors.image }
+            </p> 
+          ) 
+        }
 
         <div>
           <label htmlFor='released'>Released: </label>
@@ -138,7 +194,13 @@ const Form = () => {
             onChange={ handlerInputChange }
           />
         </div>
-        { errors.released && ( <p className={styles["error-message"]}>{ errors.released }</p> ) }
+        { 
+          errors.released && ( 
+            <p className={ styles[ "error-message" ] }>
+              { errors.released }
+            </p> 
+          ) 
+        }
 
         <div>
           <label htmlFor='rating'>Rating: </label>
@@ -150,7 +212,13 @@ const Form = () => {
             onChange={ handlerInputChange }
           />
         </div>
-        { errors.rating && ( <p className={styles["error-message"]}>{ errors.rating }</p> ) }
+        { 
+          errors.rating && ( 
+            <p className={  styles[ "error-message" ] }>
+              { errors.rating }
+            </p> 
+          ) 
+        }
 
         <div>
           <label htmlFor='genres'>Genres: </label>
@@ -165,7 +233,13 @@ const Form = () => {
             }
           </select>
         </div>
-        { errors.genres && ( <p className={styles["error-message"]}>{ errors.genres }</p> ) }
+        { 
+          errors.genres && ( 
+            <p className={ styles[ "error-message" ] }>
+              { errors.genres }
+            </p> 
+          ) 
+        }
 
         <button className={ styles.button }>
           Create Videogame
