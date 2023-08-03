@@ -13,6 +13,9 @@ videoGames.get( '/', getAllVideoGames );
 videoGames.get( '/name', getNameVideoGames );
 videoGames.get( '/:id', getIdVideoGames );
 videoGames.post( '/', postVideoGames );
-
+// videoGames.get( '/ping', async (req, res) => {
+//   await pool.query( 'SELECT NOW()' )
+//    return res.json( result.rows[ 0 ] );
+// });
 
 module.exports = videoGames;
