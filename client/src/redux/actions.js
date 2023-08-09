@@ -2,7 +2,6 @@ import {
   GET_VIDEOGAMES,
   DETAIL_VIDEOGAMES,
   SEARCH_VIDEOGAMES,
-  // CREATE_VIDEOGAMES,
   FILTER_GENRE,
   ALL_GENRE,
   SORT_VIDEOGAMES_ASC_DESC,
@@ -24,7 +23,7 @@ export const getVideogames = () => {
         payload: Videogames,
       });
     } catch ( error ) {
-      console.log( error.message );
+      console.log( error );
     };
   };
 };
@@ -58,22 +57,6 @@ export const searchVideogames = ( name ) => {
     };
   };
 };
-
-// export const postDataVideoGames = ( videogame ) => {
-//   return async ( dispatch ) => {
-//     try {
-//       console.log( videogame );
-
-//       const { data } = await axios.post( '/videogames', videogame );
-//       return dispatch({
-//         type: CREATE_VIDEOGAMES,
-//         payload: data,
-//       });
-//     } catch ( error ) {
-//       console.log( error.message );
-//     };
-//   };
-// };
 
 export const AllGenres = () => {
   return async ( dispatch ) => {
