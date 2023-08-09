@@ -4,20 +4,20 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const routes = require('./routes/index');
 const cors = require( "cors" );
-// const { config } = require( 'dotenv' );
-// const pg = require( 'pg' );
-// const DB_INTERNAL_URL = process.env;
+const { config } = require( 'dotenv' );
+const pg = require( 'pg' );
+const DB_INTERNAL_URL = process.env;
 
 require('./db.js');
-// config();
+config();
 
 const server = express();
 
 server.name = 'API';
 
-// new pg.Pool({
-//   connectionString:  DB_INTERNAL_URL,
-// });
+new pg.Pool({
+  connectionString:  DB_INTERNAL_URL,
+});
 
 server.use( bodyParser.urlencoded( { extended: true, limit: '50mb' } ) );
 server.use( bodyParser.json( { limit: '50mb' } ) );

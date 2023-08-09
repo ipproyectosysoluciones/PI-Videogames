@@ -6,8 +6,8 @@ import Detail from './components/detail/Detail';
 import axios from "axios";
 import NavBar from './components/navBar/NavBar';
 
-axios.defaults.baseURL = 'http://localhost:3001/';
-// axios.defaults.baseURL = 'https://server-videogame-0ezu.onrender.com';
+// axios.defaults.baseURL = 'http://localhost:3001/';
+axios.defaults.baseURL = 'https://server-videogame-0ezu.onrender.com';
 
 function App() {
   const location = useLocation();
